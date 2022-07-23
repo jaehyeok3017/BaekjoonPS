@@ -1,24 +1,26 @@
 #include <stdio.h>
 
-int a[1001];
-int main() {
+bool prime(int a){
+    if(a < 2) return false;
+    
+    for(int i = 2; i*i<=a; i++){
+        if(a % i == 0) return false;
+    }
+    return true;
+}
+
+int main(){
     int n;
     scanf("%d", &n);
 
     int count = 0;
     for(int i = 0; i<n; i++){
-        scanf("%d", a[i]);
+        int a;
+        scanf("%d", &a);
+        
+        bool result = prime(a);
+        if(result == true) count++;
     }
 
-    int cnt = 0;
-    for(int i = 0; i<n; i++){
-        int j = 0;
-        for(j = 0; j<i; j++){
-            if(a[i] % j == 0) break;
-        }
-
-        if(j == i) cnt++;
-    }
-
-    printf("%d", cnt);
+    printf("%d", count);
 }
