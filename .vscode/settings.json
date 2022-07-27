@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "algorithm": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "stdio.h": "c"
     }
 }
